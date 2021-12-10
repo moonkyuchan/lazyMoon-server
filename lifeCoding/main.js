@@ -7,6 +7,9 @@ var app = http.createServer(function (request, response) {
   var queryData = url.parse(_url, true).query;
   var pathName = url.parse(_url, true).pathname;
   var title = queryData.id;
+  console.log("_url:", _url);
+  console.log("queryData:", queryData);
+  console.log("title:", title);
 
   if (pathName === "/") {
     fs.readFile(`Data/${title}`, "utf8", function (err, description) {
@@ -38,4 +41,6 @@ var app = http.createServer(function (request, response) {
   }
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("3000에서 대기중");
+});
