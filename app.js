@@ -42,4 +42,7 @@ app.use(
   })
 );
 
+//USER
+app.use("/api/users", require("./NodeBook/Routes/User"));
+
 module.exports = app;
